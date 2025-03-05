@@ -1,9 +1,13 @@
 import socket
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+host = os.getenv('HOST')
+port = int(os.getenv('PORT'))
 
 try:
-    host = os.getenv('HOST')
-    port = int(os.getenv('PORT'))
     print(f"Host: {host}")
     print(f"Port: {port}")
     if (host or port) is None:
