@@ -8,8 +8,6 @@ host = os.getenv('HOST')
 port = int(os.getenv('PORT'))
 
 try:
-    print(f"Host: {host}")
-    print(f"Port: {port}")
     if (host or port) is None:
         raise ValueError("HOST or PORT environment variable is not set.")
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

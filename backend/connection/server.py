@@ -1,4 +1,8 @@
 import socket
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 try:
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
