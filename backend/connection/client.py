@@ -17,5 +17,5 @@ try:
     finally:
         s.close()
 except:
-    print("Something went wrong while connecting to the servere")
+    print("Something went wrong while connecting to the servere!")
     
