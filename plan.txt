@@ -1,0 +1,46 @@
+Thoughts
+1. User signup (email & password[hashed password])
+2. User Invitations through unique secret IDs i.e email for multiplayer or
+   Play against computer.
+3. Showing pending games for invited users and invites.
+4. Maybe when inviting a user you need to insert date & time?
+5. Use csv or real database?
+6. In future maybe extend it so that it supports wireless connections i.e WiFi &/ Bluetooth.
+7. Use Nodemailer since already know it or smtplib?
+8. Maybe extend the project to use Django in future?
+9. Show previous games and current leaderboard position
+10. Do I really want to use Flet or HTML instead?
+11. Maybe add friend request feature?
+12. Try avoiding third party libraries and sticking to STD Python Lib.
+
+Game Plan - v1
+1. Sign Up / Sign In
+2. Use csv as a database
+3. Hash passwords using bycrypt/related before storing
+4. Show position in the leaderboard | Number of defeats and wins
+5. Show previous games
+6. Show pending games
+7. Start a new game against: ['computer' or 'friend' or 'invite']
+8. Show list of friends and sent invites
+
+
+Flet for the UI and game mechanics (flipping cards, managing turns, timers, and scores).
+User Invitations through unique secret IDs for multiplayer.
+Turn-based gameplay where each player gets 5 seconds to make a move.
+Paging System so users can invite others to play.
+Nodemailer to send notifications when a player is invited.
+
+Plan for Development
+1. Multiplayer Game Logic
+    Players take turns flipping cards.
+    5-second countdown per turn.
+    Score is updated based on successful matches.
+
+2. Game Invitation System
+    Each player has a unique secret ID.
+    Players can invite others via a UI prompt.
+    Once invited, the recipient gets an email with a game link.
+
+3. Real-time Gameplay
+    Use WebSockets for real-time updates when a move is made.
+    Show an alert when the other player plays their turn.
