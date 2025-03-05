@@ -8,8 +8,8 @@ host = os.getenv('HOST')
 port = int(os.getenv('PORT'))
 
 try:
-    if (host or port) is None:
-        raise ValueError("HOST or PORT environment variable is not set.")
+    if host is None or port is None:
+        raise ValueError("Did you forget to set the enviroment variables for HOST or PORT?")
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         s.connect((host, port))
@@ -18,6 +18,6 @@ try:
         print('Received:', repr(data))
     finally:
         s.close()
-except:
-    print("Something went wrong while connecting to the servere!")
+except ValueError as err:
+    print("Opps! ", err)
     
